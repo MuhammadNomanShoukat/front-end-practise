@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hello, world!</title>
+</head>
+
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #555;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 40px;
+}
+
+.sidebar a {
+  
+  text-decoration: none;
+  font-size: 12px;
+  color: #818181;
+  display: block;
+  clear: both;
+  transition: 0.3s;
+  
+}
+
+
+
+.sidebar a:hover {
+  color: white;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  float: right;
+}
+
+.openbtn {
+  font-size: 15px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: white;
+  
+  float: right;
+  
+  
+  
+}
+
+.closingnav{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: white;
+    float:right;
+    padding:5px;
+    margin-right: 20px;
+}
+
+.openbtn:hover {
+  background-color: none;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+
+
+
+.collapsible {
+  border: 0px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border-top: 1px solid grey;
+  text-align: left;
+  outline: none;
+  font-size: 11px;
+}
+
+.active, .collapsible:hover {
+  background-color: none;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+</style>
+
+
+
+
+<body>
+    <div class='container-fluid header_color'>
+        <div class="mx-4 " >
+            <div class="row" style="border-bottom: 1px solid grey;">
+                <div class="col-8 col-md-8 col-lg-8 d-none d-lg-block d-md-none" style="background-color:">
+                    <p class="header_welcome p-1 mt-2">
+                        <b>Welcome to Emarket !</b> ! Wrap new offers / gift every single day on Weekends - New Coupon code: Happy2018
+                    </p>
+                </div>
+                <div class="col-5 header-top-left d-block d-lg-none" style="background-color:">
+                    <i class="fa fa-user"></i>
+                    <div class="dropdown top_left_register p-1">
+                        <a href="#" class="btn btn-link" data-toggle="dropdown" id="account_register">
+                            <span class="d-none d-sm-inline mr-2 ">My Account</span><i class="fa fa-caret-down"></i>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu modify" id="account_list" style="color:black">
+                            <li><a href="register.html"><i class="fa fa-user"></i> Register</a></li>
+                            <li><a href="login.html"><i class="fa fa-pencil-square-o"></i> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-lg-4" style="background-color:">
+                    <div class="float-right ">
+                        <div class="dropdown header_dropdown">
+                            <a href="#" class="btn btn-link dropdown-toggle header_dropdown_label" data-toggle="dropdown" id="currency">
+                            $ US Dollar
+                            </a>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu" id="currency_list">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Urdu</a></li>
+                                <li><a href="#">other's</a></li>
+                            </ul>
+                        </div>
+                        <span style="color:grey">|</span>
+                        <div class="dropdown header_dropdown">
+                            <a href="#" class="btn btn-link dropdown-toggle " data-toggle="dropdown" id="language">
+                                <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/flags/gb.png"  class="img-fluid" alt="English" title="English"> English
+                            </a>
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu" id="language_list">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Urdu</a></li>
+                                <li><a href="#">other's</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-none d-lg-block" style="background-color:">
+                    <div class="float-right signup-links p-2">
+                        <li class="fa fa-lock"></li><a href="" class='.signup-links'>Login</a> or <a href="">Register</a>
+                    </div>
+                </div>
+            </div>
+           <div class="row">
+            <div class="col" style="background-color:">
+                
+                <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img mx-auto"/>
+                
+            </div>
+            <div class="col-10" style="background-color:">
+                <div class="mega-dropdown">
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="language" style="color:#FA2C03">
+                                <strong >HOME </strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="language">
+                                <img class="label-hot" src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/menu/new-icon.png" alt="icon items" > 
+                                <strong>FEATURES</strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="language">
+                                <strong>PAGES</strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="language">
+                        <img class="label-hot my-1" src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/menu/hot-icon.png" alt="icon items">    
+                                <strong>CATEGORIES</strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link" data-toggle="dropdown" id="language">
+                                <strong>ACCESSORIES</strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-link" data-toggle="dropdown" id="language">
+                                <strong>BLOG</strong>
+                        </a>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="language_list" style='color:black'>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Urdu</a></li>
+                            <li><a href="#">other's</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <button type="button" class="collapsible" ><strong>HOME</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                    </div>
+                    
+                    <button type="button" class="collapsible"><strong>FEATURES</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        
+                    </div>
+                    
+                    <button type="button" class="collapsible"><strong>PAGES</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <img src="http://demo.smartaddons.com/templates/html/emarket/image/catalog/logo.png" class="logo_img"/>
+                        
+                        
+                    </div>
+
+                    <button type="button" class="collapsible"><strong>CATEGORIES</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <h1>hp</h1>
+                        
+                    </div>
+
+                    <button type="button" class="collapsible"><strong>ASSECCROIES</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <h1>dell</h1>
+                        
+                    </div>
+                    
+                    <button type="button" class="collapsible"><strong>BLOG</strong> <i class="fa fa-plus float-right" aria-hidden="true"></i> </button>
+                    <div class="content">                        
+
+                        <h1>helo</h1>
+                        
+                    </div>
+                </div>
+                
+                    <button class="openbtn icon" onclick="openNav();">☰</button>  
+
+
+
+                <script>
+
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                    content.style.display = "none";
+                    } else {
+                    content.style.display = "block";
+                    }
+                });
+                }
+
+                
+
+
+
+
+                    function openNav() {
+                    document.getElementById("mySidebar").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    
+                    }
+
+                    function closeNav() {
+                    document.getElementById("mySidebar").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    }
+
+
+                    
+
+                    </script>
+   
+
+            </div>
+        </div>
+        <div class="row mt-3" >
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" style="background-color:">
+                <div class="vertical_bar " >
+                    <a class="btn btn-link" data-toggle="dropdown" id="language" >
+                        <i class="fa fa-bars mr-1" aria-hidden="true"></i>
+                        <strong>ALL CATEGORIES</strong>
+                        <i class="fa fa-angle-down ml-4"></i>
+                    </a>
+                    
+                    
+                </div>
+                
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="background-color:">
+                <div class="container">
+                    
+
+                    <form class="search form-group input-group search_form">
+                        <select class="categories_option">
+                            <option>All Categories</option>
+                            <option>two</option>
+                            <option>three</option>
+                            <option>four</option>
+                        </select>
+
+                        
+                        <input type="text" name="" value="" class="search_field" placeholder="keyword here"/>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                
+
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4" style="background-color:">
+                <div class="compare_info mr-3 ">
+                    <a href="" class="refresh_shap"><i class="fa fa-refresh " ></i></a>
+                    
+                </div>
+                
+                <div class="cart_info mx-3">
+                    <a href="#" id="wishlist-total" class="top-link-wishlist heart_shap" title="Wish List (0) "><i class="fa fa-heart"></i></a>    
+                </div>
+                
+                <div class="shopping_bag_info mx-3 shopping shopping-btn ">
+                    
+                    <a href="#" id="wishlist-total" class="top-link-wishlist "  title="Wish List (0) "><i class="fa fa-shopping-bag" >
+                
+                    </i>
+                    </a>    
+                    
+                    
+                    
+                </div>
+                
+                
+                <div class="cart_price_label mx-3">
+                    <strong class="cart_title">My Cart</strong>
+                </div>
+
+                <div class="cart_price">
+                    <a href="#" id="wishlist-total" class="top-link-wishlist cart_value" title="Wish List (0) ">$ 22323</a>    
+                    
+                </div>
+                
+            </div>
+                   
+        </div>
+        <div class='row'>
+            <div class="col-4">
+                <!-- empty div-->
+            </div>
+            <div class="col-4">
+                <!-- empty div-->
+            </div>
+            <div class="col-4 shopping-data" style="background-color: #555; color:white; padding:10px; margin-right-10px; border-radius:10px">
+                <p>Testing data herer</p>
+                <p>Testing data herer</p>
+                <p>Testing data herer</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#currency").mouseover(function() {
+                $('#currency_list').slideDown();
+            });
+
+            $("#currency").mouseleave(function() {
+                $('#currency_list').slideUp();
+            });
+
+            $("#language").mouseover(function() {
+                $('#language_list').slideDown();
+            });
+
+            $("#language").mouseleave(function() {
+                $('#language_list').slideUp();
+            });
+
+            $("#account_register").mouseover(function() {
+                $("#account_list").slideDown();
+            });
+
+            $("#account_register").mouseleave(function() {
+                $('#account_list').slideUp();
+            });
+            
+            $(".shopping-data").hide();
+            $(".shopping-btn a").click(function() {
+                $(".shopping-data").toggle();
+            });
+
+
+            
+
+
+
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
